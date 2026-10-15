@@ -814,6 +814,16 @@
             .sets-table th, .sets-table td { padding: 7px 5px; font-size: 12px; }
         }
     </style>
+    <!-- Déclaration PWA & Service Worker -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-512.png">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').catch(err => console.warn('SW error:', err));
+            });
+        }
+    </script>
 </head>
 <body>
 
